@@ -2,7 +2,7 @@ package example
 
 import (
 	tgClient "github.com/Zigatase/telego"
-	event_consumer "github.com/Zigatase/telego/consumer/event-consumer"
+	"github.com/Zigatase/telego/consumer/event_consumer"
 	"github.com/Zigatase/telego/events/telegram"
 	"log"
 )

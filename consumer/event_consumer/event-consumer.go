@@ -53,11 +53,11 @@ TODO: Проблемы
 */
 func (c Consumer) handleEvents(events []events.Event) error {
 	for _, event := range events {
-		log.Printf("[Consumer] Got new event-consumer: %s", event.Text)
+		log.Printf("[Consumer] Got new event_consumer: %s", event.Text)
 
 		// --- TODO: пароблема в логике, если евент не обработался, то его пропустит и не обработает ---
 		if err := c.processor.Process(event); err != nil {
-			log.Printf("[Consumer -> handleEvents] Can't handle event-consumer: %s", err.Error())
+			log.Printf("[Consumer -> handleEvents] Can't handle event_consumer: %s", err.Error())
 
 			continue
 		}
