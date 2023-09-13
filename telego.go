@@ -2,7 +2,6 @@ package telego
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/Zigatase/telego/e"
 	"github.com/Zigatase/telego/types"
 	"io"
@@ -27,7 +26,6 @@ type Client struct {
 }
 
 func New(token string) *Client {
-	fmt.Println("Telegram Client Creat!")
 	return &Client{
 		host:     tgBotApiHost,
 		basePath: newBasePath(token),

@@ -13,6 +13,8 @@ type Consumer struct {
 }
 
 func NewConsumer(fetcher events.Fetcher, processor events.Processor, baseSize int) Consumer {
+	log.Println("Telegram Bot Started!")
+
 	return Consumer{
 		fetcher:   fetcher,
 		processor: processor,

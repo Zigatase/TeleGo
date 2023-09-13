@@ -7,6 +7,7 @@ import (
 	"github.com/Zigatase/telego/e"
 	events "github.com/Zigatase/telego/events"
 	"github.com/Zigatase/telego/types"
+	"log"
 )
 
 type Processor struct {
@@ -18,6 +19,8 @@ type Processor struct {
 var ErrUnknownEventType = errors.New("Unknown Message")
 
 func NewProcessor(client *telego.Client) *Processor {
+	log.Println("The bot process has been successfully created")
+
 	return &Processor{
 		tgClient: client,
 	}
