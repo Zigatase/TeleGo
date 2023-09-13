@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/Zigatase/telego/e"
+	"github.com/Zigatase/telego/types"
 	"io"
 	"net/http"
 	"net/url"
@@ -25,9 +26,9 @@ type Client struct {
 	client   http.Client
 }
 
-func New(token string) Client {
+func New(token string) *Client {
 	fmt.Println("Telegram Client Creat!")
-	return Client{
+	return &Client{
 		host:     tgBotApiHost,
 		basePath: newBasePath(token),
 		client:   http.Client{},
@@ -38,7 +39,7 @@ func newBasePath(token string) string {
 	return "bot" + token
 }
 
-func (c *Client) Updates(offset int, limit int) ([]Update, error) {
+func (c *Client) Updates(offset int, limit int) ([]types.Update, error) {
 	// https://core.telegram.org/bots/api#getupdates
 	q := url.Values{}
 
@@ -51,7 +52,7 @@ func (c *Client) Updates(offset int, limit int) ([]Update, error) {
 		return nil, err
 	}
 
-	var res UpdatesResponse
+	var res types.UpdatesResponse
 	if err := json.Unmarshal(data, &res); err != nil {
 		return nil, err
 	}
