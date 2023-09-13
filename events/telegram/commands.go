@@ -11,7 +11,7 @@ func (p *Processor) doCmd(text string, chatID int, username string) error {
 
 	log.Printf("Got new command '%s' from '%s' (ChatID -> %s)", text, username, strconv.Itoa(chatID))
 
-	// TODO: Сделать нормальную реализацую у Роуторов
+	// TODO: Сделать нормальную реализацую у Роуторов (мб генерацию)
 	// --- Init Command ---
 	if text == "/start" {
 		return p.sendHello(chatID)
