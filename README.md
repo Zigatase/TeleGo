@@ -2,7 +2,7 @@
 
 TeleGo is a modern framework for Telegram BotAPI written in Golang.
 
-! The library is in an early stage of development, do not use it in a real project !
+    ! The library is in an early stage of development, do not use it in a real project !
 
 Make your bots faster and more powerful!
 
